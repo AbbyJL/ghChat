@@ -38,14 +38,15 @@ class InitApp {
    const chatFromId = data.to_group_id ? data.to_group_id : data.from_user;
    const title = data.to_group_id && data.groupName ? data.groupName : name;
    this._browserNotification.notify({
-     title,
-     text: message,
-     icon: avatar,
-     onClick: () => {
-       this._history.push(`/${chatType}/${chatFromId}?name=${title}`);
-       window.focus();
-       this._chat.clearUnreadHandle({ homePageList: homePageListState, chatFromId });
-     }
+    title,
+    text: message,
+    icon: avatar,
+    audio: "http://cdnringuc.shoujiduoduo.com/ringres/user/a48/304/18687304.aac",
+    onClick: () => {
+      this._history.push(`/${chatType}/${chatFromId}?name=${title}`);
+      window.focus();
+      this._chat.clearUnreadHandle({ homePageList: homePageListState, chatFromId });
+    }
    });
  }
 
